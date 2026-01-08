@@ -9,4 +9,4 @@ export const sort = (arr, by) =>{
 }
 
 
-export const filterRegion = (arr, region) => arr.filter( country => country.region.toLowerCase() === region )
+export const filterRegion = (arr, region) => region === 'default' ? [...arr] : arr.filter( country => country.region.toLowerCase() === region);
