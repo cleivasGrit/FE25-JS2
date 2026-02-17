@@ -1,17 +1,25 @@
 import express from 'express';
+import type { Request, Response, NextFunction } from 'express';
 import cors from "cors";
 import { getMovies, addMovie, getMovieByID, deleteMovieByID, updateMovieRating } from './fileoperations';
 import { isNewMovie } from './types';
-
+// import type { Request, Response, NextFunction } from '@types/express';
 
 export const app = express();
-app.use(express.json());
-app.use(cors())
+
+const middleware = (req: Request, res: Response, next: NextFunction)=>{
+    console.log('Ett middleware');
+    next();
+}
+
+app.use( express.json() );
+app.use( cors() );
+app.use(middleware);
 
 app.get('/movies', async (req, res) => {
 
     console.log('Queries:', req.query)
-    // On det finns en query med ett id som är en string försöker vi hämta en enskild film
+    // Om det finns en query med ett id som är en string försöker vi hämta en enskild film
     try{
         if (typeof req.query.id === 'string') {
             console.log('ID')

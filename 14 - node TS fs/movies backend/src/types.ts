@@ -1,5 +1,5 @@
 export type Movie = {
-    title: string,
+    name: string,
     director: string,
     id: `${string}-${string}-${string}-${string}-${string}`,
     year: number,
@@ -7,7 +7,7 @@ export type Movie = {
 }
 
 export type newMovie = {
-    title: string,
+    name: string,
     director: string,
     year: number,
     rating?: number
