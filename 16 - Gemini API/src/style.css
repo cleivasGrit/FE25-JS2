@@ -1,0 +1,14 @@
+p{
+    width: 80%;
+    max-width: 400px;
+}
+
+.gemini{
+    border: 1px solid red;
+    margin: 0.5rem auto 0 0;
+}
+
+.user{
+    border: 1px solid blue;
+    margin: 0.5rem 0 0 auto;
+}
